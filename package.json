@@ -1,7 +1,7 @@
 {
   "name": "food-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API to consult different meals. It is only as a practice for a university class",
   "type": "module",
   "main": "src/app.js",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "express": "^4.19.2",
