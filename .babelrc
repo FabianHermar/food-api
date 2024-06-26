@@ -1,3 +1,17 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"]
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "@/models": "./src/models",
+          "@/controllers": "./src/controllers",
+          "@/utils": "./src/utils",
+          "@/conn": "./conn/conn.js"
+        }
+      }
+    ]
+  ]
 }
