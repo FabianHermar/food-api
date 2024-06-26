@@ -5,8 +5,8 @@
   "type": "module",
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon src/app.js",
-    "start": "node src/app.js",
+    "dev": "nodemon --exec babel-node src/app.js",
+    "start": "babel-node src/app.js",
     "lint": "eslint --ext .astro,.ts,.js,.tsx .",
     "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix",
     "format": "prettier --write src",
@@ -19,18 +19,27 @@
     "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
+    "module-alias": "^2.2.3",
     "mongoose": "^8.4.4",
     "morgan": "^1.10.0",
     "standard": "^17.1.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
     "@babel/eslint-parser": "^7.24.7",
+    "@babel/node": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
+    "babel-plugin-module-resolver": "^5.0.2",
     "nodemon": "^3.1.4",
     "prettier": "^3.3.2"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "_moduleAliases": {
+    "@/src": "src",
+    "@/conn": "conn/conn.js"
   }
 }
