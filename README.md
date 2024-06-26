@@ -42,13 +42,13 @@ DELETE /api/food/:id
 
 ## Built With 🏗
 
-- [Node.js](https://nodejs.org/)
-- [Express](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Mongoose](https://mongoosejs.com/)
-- [Prettier](https://prettier.io/)
-- [ESLint](https://eslint.org/)
-- [pnpm](https://pnpm.io/)
+- [Node.js](https://nodejs.org/) - JavaScript runtime
+- [Express](https://expressjs.com/) - Web framework for Node.js
+- [MongoDB](https://www.mongodb.com/) - NoSQL database
+- [Mongoose](https://mongoosejs.com/) - MongoDB object modeling tool
+- [Prettier](https://prettier.io/) - Code formatter
+- [ESLint](https://eslint.org/) - Linter
+- [pnpm](https://pnpm.io/) - Package manager
 
 ## Available commands 📜
 
