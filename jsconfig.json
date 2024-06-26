@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/conn": ["conn/conn.js"]
+    }
+  },
+  "include": ["src/**/*", "conn/**/*"]
+}
