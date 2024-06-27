@@ -9,8 +9,8 @@
     "start": "babel-node src/app.js",
     "lint": "eslint --ext .astro,.ts,.js,.tsx .",
     "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix",
-    "format": "prettier --write src",
-    "format:check": "prettier --check src"
+    "format": "prettier --write src conn",
+    "format:check": "prettier --check src conn"
   },
   "keywords": [],
   "author": "",
