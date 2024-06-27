@@ -9,8 +9,8 @@
     "start": "babel-node src/app.js",
     "lint": "eslint --ext .astro,.ts,.js,.tsx .",
     "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix",
-    "format": "prettier --write src conn",
-    "format:check": "prettier --check src conn"
+    "format": "prettier --write src",
+    "format:check": "prettier --check src"
   },
   "keywords": [],
   "author": "",
@@ -42,6 +42,6 @@
   },
   "_moduleAliases": {
     "@/src": "src",
-    "@/conn": "conn/conn.js"
+    "@/db": "src/config/*"
   }
 }
