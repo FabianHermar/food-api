@@ -4,12 +4,12 @@
     [
       "module-resolver",
       {
-        "root": ["."],
+        "root": ["src"],
         "alias": {
-          "@/models": "./src/models",
-          "@/controllers": "./src/controllers",
-          "@/utils": "./src/utils",
-          "@/conn": "./conn/conn.js"
+          "@/models": "./src/models/*",
+          "@/controllers": "./src/controllers/*",
+          "@/utils": "./src/utils/*",
+          "@/db": "./src/config/*"
         }
       }
     ]
