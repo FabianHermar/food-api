@@ -25,19 +25,19 @@ GET /api/food
 ### Read a single food item
 
 ```http
-GET /api/food/:id
+GET /api/food/:uuid
 ```
 
 ### Update a food item
 
 ```http
-PUT /api/food/:id
+PUT /api/food/:uuid
 ```
 
 ### Delete a food item
 
 ```http
-DELETE /api/food/:id
+DELETE /api/food/:uuid
 ```
 
 ## Built With 🏗
