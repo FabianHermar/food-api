@@ -61,12 +61,13 @@ export const updateDishByUuid = async ( req, res ) => {
 export const deleteDishByUuid = async ( req, res ) => {
   const { uuid } = req.params;
   try {
-    let dish = await Dish.findOneAndRemove( { uuid } );
+    let dish = await Dish.findOneAndDelete( { uuid } );
     if ( !dish ) {
       return res.status( 404 ).json( { msg: 'Dish not found' } );
     }
     res.json( { msg: 'Dish removed' } );
   } catch ( err ) {
-    res.status( 500 ).send( 'Server Error' );
+    console.error( err );
+    res.status( 500 ).json( { msg: 'Server Error', error: err.message } );
   }
 };
