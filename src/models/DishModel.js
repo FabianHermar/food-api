@@ -27,6 +27,7 @@ const DishSchema = new mongoose.Schema( {
     enum: [ 'Tacos', 'Enchiladas', 'Quesadillas', 'Sopas', 'Postres', 'Bebidas' ],
     required: true
   }
-} );
+},
+  { versionKey: false } );
 
 export default mongoose.model( 'DishModel', DishSchema );
