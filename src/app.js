@@ -63,7 +63,15 @@ app.get('/', (req, res) => {
       {
         method: 'DELETE',
         delete_dish_by_uuid: '/api/dishes/:uuid',
-      }
+      },
+      {
+        method: 'POST',
+        login_with_JWT: '/api/auth/login',
+        body: {        
+          username: 'String',
+          password: 'String'
+        }
+      },
     ],
     note: 'This API is for educational purposes only. Do not use it in a production environment.',
     additional_note: "Don't forget to check the README.md file for more information."
