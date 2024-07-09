@@ -1,22 +1,18 @@
-import express from 'express';
-import { getDishes, createDish, getDishByUuid, updateDishByUuid, deleteDishByUuid } from '../controllers/FoodController.js';
-import authMiddleware from '../middleware/authMiddleware.js';
+import { Router } from 'express'
+import {
+  createDish,
+  deleteDishByUuid,
+  getDishByUuid,
+  getDishes,
+  updateDishByUuid,
+} from '../controllers/FoodController.js'
 
-const router = express.Router();
+const router = Router()
 
-// Obtener todos los platillos
-router.get('/dishes', getDishes);
+router.get('/dishes', getDishes)
+router.post('/dishes', createDish)
+router.get('/dishes/:uuid', getDishByUuid)
+router.put('/dishes/:uuid', updateDishByUuid)
+router.delete('/dishes/:uuid', deleteDishByUuid)
 
-// Crear un nuevo platillo
-router.post('/dishes', authMiddleware, createDish);
-
-// Obtener un platillo por uuid
-router.get('/dishes/:uuid', getDishByUuid);
-
-// Actualizar un platillo por uuid
-router.put('/dishes/:uuid', authMiddleware, updateDishByUuid);
-
-// Eliminar un platillo por uuid
-router.delete('/dishes/:uuid', authMiddleware, deleteDishByUuid);
-
-export default router;
+export default router
