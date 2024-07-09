@@ -3,16 +3,12 @@ import express from 'express'
 import morgan from 'morgan'
 import connectDB from './config/db.js'
 import FoodRoute from './routes/FoodRoute.js'
-import AuthRoute from './routes/AuthRoute.js';
-import UserRoutes from './routes/UserRoutes.js';
-
-
+import UserRoutes from './routes/UserRoutes.js'
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
 connectDB()
-
 
 // Middlewares
 app.use(express.urlencoded({ extended: true }))
@@ -28,7 +24,7 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-  res.json( {
+  res.json({
     message: 'Welcome to the Food API',
     food_api: 'API is running 🚀',
     routes: [
@@ -78,25 +74,20 @@ app.get('/', (req, res) => {
     ],
     note: 'This API is for educational purposes only. Do not use it in a production environment.',
     additional_note: "Don't forget to check the README.md file for more information."
-  } )
-} )
+  })
+})
 
+// Añadir las rutas de FoodRoute a la aplicación
+app.use('/api', FoodRoute)
 
+// Añadir las rutas de UserRoutes a la aplicación
+app.use('/api/users', UserRoutes)
 
-// Ruta JWT
-app.use('/api/auth', AuthRoute);
-
-// Add the FoodRoute to the app
-app.use( '/api', FoodRoute )
-
-//Add the UserRoute to the app
-app.use('/api',UserRoutes)
- 
-// 404 Route
-app.use( ( req, res ) => {
-  return res.status( 404 ).json( {
+// Ruta 404
+app.use((req, res) => {
+  return res.status(404).json({
     message: `Route ${req.url} Not found. 🙅‍♂️`
-  } )
+  })
 })
 
 app.listen(PORT, () => {
