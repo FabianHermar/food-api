@@ -27,6 +27,8 @@ app.get('/', (req, res) => {
   res.json( {
     message: 'Welcome to the Food API',
     food_api: 'API is running 🚀',
+    note: 'This API is for educational purposes only. Do not use it in a production environment.',
+    additional_note: "Don't forget to check the README.md file for more information.",
     routes: [
       {
         method: 'GET',
@@ -64,8 +66,6 @@ app.get('/', (req, res) => {
         delete_dish_by_uuid: '/api/dishes/:uuid',
       }
     ],
-    note: 'This API is for educational purposes only. Do not use it in a production environment.',
-    additional_note: "Don't forget to check the README.md file for more information."
   } )
 } )
 
