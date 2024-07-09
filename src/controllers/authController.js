@@ -1,13 +1,11 @@
-import express from 'express';
 import bcrypt from 'bcryptjs';
-import { register, login } from '../controllers/authController.js';
 import jwt from 'jsonwebtoken';
-import UserModel from '../models/UserModel.js'; 
+import UserModel from '../models/UserModel.js';
 
-const router = express.Router();
+//Manejo de  login y register
 
-// Registro
-router.post('/register', async (req, res) => {
+//Register
+export const register = async (req, res) => {
   const { username, password } = req.body;
 
   const salt = await bcrypt.genSalt(10);
@@ -20,10 +18,10 @@ router.post('/register', async (req, res) => {
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-});
+};
 
-// Login for api
-router.post('/login', async (req, res) => {
+//Login
+export const login = async (req, res) => {
   const { username, password } = req.body;
 
   const user = await UserModel.findOne({ username });
@@ -34,6 +32,4 @@ router.post('/login', async (req, res) => {
 
   const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
   res.header('Authorization', `Bearer ${token}`).json({ token });
-});
-
-export default router;
+};
