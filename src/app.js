@@ -4,7 +4,7 @@ import morgan from 'morgan'
 import connectDB from './config/db.js'
 import FoodRoute from './routes/FoodRoute.js'
 import AuthRoute from './routes/AuthRoute.js';
-import UserRoutes from '/routes/UserRoutes.js';
+import UserRoutes from './routes/UserRoutes.js';
 
 
 
