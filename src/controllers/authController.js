@@ -2,6 +2,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import UserModel from '../models/UserModel.js';
 
+//Manejo de  login y register
 export const register = async (req, res) => {
   const { username, password } = req.body;
 
