@@ -3,6 +3,8 @@ import express from 'express'
 import morgan from 'morgan'
 import connectDB from './config/db.js'
 import FoodRoute from './routes/FoodRoute.js'
+import AuthRoute from './routes/AuthRoute.js';
+
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -62,16 +64,29 @@ app.get('/', (req, res) => {
       {
         method: 'DELETE',
         delete_dish_by_uuid: '/api/dishes/:uuid',
-      }
+      },
+      {
+        method: 'POST',
+        login_with_JWT: '/api/auth/login',
+        body: {        
+          username: 'String',
+          password: 'String'
+        }
+      },
     ],
     note: 'This API is for educational purposes only. Do not use it in a production environment.',
     additional_note: "Don't forget to check the README.md file for more information."
   } )
 } )
 
+
+
+// Ruta JWT
+app.use('/api/auth', AuthRoute);
+
 // Add the FoodRoute to the app
 app.use( '/api', FoodRoute )
-
+ 
 // 404 Route
 app.use( ( req, res ) => {
   return res.status( 404 ).json( {
