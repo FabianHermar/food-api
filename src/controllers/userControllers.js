@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import validator from 'validator';
 
+//Que pendiente el registro correcto de UUID
 export const createUser = async (req, res) => {
   const { username, email, password } = req.body;
 
