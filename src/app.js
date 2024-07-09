@@ -88,6 +88,9 @@ app.use('/api/auth', AuthRoute);
 
 // Add the FoodRoute to the app
 app.use( '/api', FoodRoute )
+
+//Add the UserRoute to the app
+app.use('/api',UserRoutes)
  
 // 404 Route
 app.use( ( req, res ) => {
