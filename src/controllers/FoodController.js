@@ -1,5 +1,20 @@
 import Dish from '../models/DishModel.js'
 
+// Get all dishes or filter by category
+export const getDishesByCategory = async (req, res) => {
+  const { category } = req.params;
+
+  try {
+    const dishes = await Dish.find({ category });
+    if (dishes.length === 0) {
+      return res.status(404).json({ msg: 'No dishes found in this category' });
+    }
+    res.json(dishes);
+  } catch (err) {
+    res.status(500).send('Server Error');
+  }
+};
+
 // Get all dishes
 export const getDishes = async (req, res) => {
   try {
