@@ -10,10 +10,16 @@ This is a simple API that allows you to create, read, update and delete food ite
 
 ## API Endpoints 🛣
 
+### Register to food api
+  
+```http
+POST /api/users/register
+```
+
 ### Login to food api
 
 ```http
-POST /api/auth/login
+POST /api/users/login
 ```
 
 ### Create a food item 
