@@ -75,29 +75,6 @@ export const getDishesByName = async ( req, res ) => {
   }
 }
 
-
-// Get a dish by Price
-export const getDishesByPrice = async ( req, res ) => {
-  let { price } = req.query;
-  price = Number( price ); // Convertir el valor de price a Number
-
-  // Verificar si price es un número válido y positivo
-  if ( isNaN( price ) || price <= 0 ) {
-    return res.status( 400 ).json( { msg: 'Invalid price value' } );
-  }
-
-  try {
-    const dishes = await Dish.find( { price: { $lte: price } } );
-    if ( !dishes.length ) {
-      return res.status( 404 ).json( { msg: 'No dishes found under this price' } );
-    }
-    res.json( dishes );
-  } catch ( err ) {
-    console.error( err );
-    res.status( 500 ).send( 'Server Error' );
-  }
-};
-
 // Update a dish by uuid
 export const updateDishByUuid = async (req, res) => {
   const { uuid } = req.params
@@ -116,6 +93,7 @@ export const updateDishByUuid = async (req, res) => {
     res.status(500).send('Server Error')
   }
 }
+
 
 // Delete a dish by uuid
 export const deleteDishByUuid = async (req, res) => {
