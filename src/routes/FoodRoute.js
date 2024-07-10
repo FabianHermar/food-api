@@ -4,7 +4,6 @@ import {
   deleteDishByUuid,
   getDishByUuid,
   getDishes,
-  updateDishByUuid,
   getDishesByCategory,
   getDishesByName,
   updateDishByUuid,
